@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+@import '../../App.scss';
+
+@mixin setColors($color1, $color2) {
+    color: $color1;
+    background-color: $color2;
+    transition: background-color 0.3s, color 0.3s;
+    #header {
+        outline: 1px solid $color1;
+    }
+    button {
+        background-color: $color2;
+        color: $color1;
+        border-color: $color1;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        svg {
+            stroke: $color1;
+            transition: stroke 0.3s;
+            path {
+                fill: $color1;
+                transition: fill 0.3s;
+            }
+        }
+    }
+    button:hover {
+        background-color: invert($color2, $weight: 20%);
+        color: invert($color1, $weight: 20%);
+        border-color: invert($color1, $weight: 20%);
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        svg {
+            stroke: invert($color1, $weight: 20%);
+            transition: stroke 0.3s;
+            path {
+                fill: invert($color1, $weight: 20%);
+                transition: fill 0.3s;
+            }
+        }
+    }
+    .wrapper,
+    iframe {
+        border: 1px solid $color1;
+    }
+}
+
+.light {
+    @include setColors($darkColor, $lightColor);
+}
+
+.dark {
+    @include setColors($lightColor, $darkColor);
+}
+
+body,
+html {
+    font-family: "Questrial", sans-serif;
+    font-size: 1.05em;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+p {
+    margin: 0;
+}
+
+#smallScreen {
+    display: none;
+}
+
+@media screen and (max-width: 992px), screen and (max-height: 576px) {
+    #smallScreen {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: grey;
+        text-align: center;
+    }
+}

@@ -1,0 +1,46 @@
+@import '../../App.scss';
+
+.wrapper {
+    position: relative;
+    padding-top: 26px;
+}
+
+.wrapper button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    border: none;
+}
+
+.wrapper p {
+    position: absolute;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 8px;
+    font-weight: bold;
+}
+
+#htmlCode p {
+    background-color: $htmlColor;
+}
+
+#cssCode p {
+    background-color: $cssColor;
+}
+
+#jsCode p {
+    background-color: $jsColor;
+}
+
+.ace_gutter,
+.ace_scroller {
+    transition: background-color 0.3s;
+}
+
+.ace_gutter {
+    border-right: 1px solid grey;
+}

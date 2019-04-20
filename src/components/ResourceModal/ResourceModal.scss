@@ -1,0 +1,60 @@
+@import '../../App.scss';
+
+.modal-content,
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    background-color: $lightColor;
+    color: $darkColor;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    border-bottom-color: $lightColor;
+}
+
+.nav-item {
+    width: 50%;
+    cursor: pointer;
+}
+
+.tip {
+    margin-top: 30px;
+    text-align: justify;
+    min-height: 100px;
+}
+
+.resourceList {
+    padding: 0;
+    width: 100%;
+    li {
+        list-style: none;
+        background-color:rgb(233, 236, 239);
+        border: 1px solid rgb(206, 212, 218);
+        border-radius: 5px;
+        margin-top: 15px;
+        .col-11, .col-1 {
+            display: flex;
+            align-items: center;
+        }
+        .col-1 {
+            padding: 0;
+        }
+        .col-11 {
+            padding-right: 0;
+        }
+        p {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-left: 15px;
+        }
+        button {
+            background: none;
+            border: none;
+            font-weight: 600;
+            span {
+                font-size: 1.5em;
+                color: gray;
+            }
+        }
+    }
+}
