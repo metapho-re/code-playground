@@ -1,9 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # Code Playground
 
-A React-based code playground for the web.
-Input HTML, CSS and JavaScript to see the resulting web page displayed live in the browser.
+A code playground for the web.
+Provide HTML, CSS and JavaScript, and watch the result live in the browser.
 
 ## Installation
 
@@ -11,7 +9,7 @@ npm install
 
 ## Usage
 
-npm start
+npm run dev
 
 ## Production Build
 
@@ -19,22 +17,20 @@ npm run build
 
 ## Features
 
-* Switch between a light and a dark theme.
-* Select between three different working layouts.
-* Maximize/minimize code editors and frame.
-* Add external CSS stylesheets and/or JS libraries & scripts.
-* Enjoy the features of a modern code editor, like syntax highlighting, autocomplete, etc.
+- Light and dark themes
+- Three different layouts
+- Full screen mode for code editors and iframe
+- Support for external CSS stylesheets and JS libraries & scripts
+- Full-featured code editor (CodeMirror)
 
 ## Built with
 
-* [React](https://github.com/facebook/react/) - the framework
-* [Redux](https://github.com/reduxjs/redux) - the state container
-* [Reactstrap](https://github.com/reactstrap/reactstrap) - the components and styles
-* [Ace](https://github.com/securingsincity/react-ace) - the code editor
+- [React](https://github.com/facebook/react/) - the framework
+- [CodeMirror](https://github.com/codemirror/) - the code editor
 
 ## Author
 
-* **Pierre-Alain Castella** - *Initial work* - [metapho-re](https://github.com/metapho-re)
+- **Pierre-Alain Castella** - _Initial work_ - [metapho-re](https://github.com/metapho-re)
 
 ## License
 

@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: #1f1f28;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.panel {
+  overflow: scroll;
+}
+
+.panel,
+iframe {
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: 1px solid #54546d;
+}
