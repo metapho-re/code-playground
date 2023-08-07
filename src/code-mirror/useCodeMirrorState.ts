@@ -3,7 +3,7 @@ import { html } from "@codemirror/lang-html";
 import { javascript } from "@codemirror/lang-javascript";
 import { Extension } from "@codemirror/state";
 import { useCallback, useMemo, useState } from "react";
-import { DocToJSON } from "./types";
+import { DocToJSON } from "../types";
 
 const languages = {
   html,

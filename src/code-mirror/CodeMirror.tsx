@@ -1,6 +1,6 @@
 import { EditorStateConfig, Extension } from "@codemirror/state";
 import { useCodeMirror } from "./useCodeMirror";
-import { DocToJSON } from "./types";
+import { DocToJSON } from "../types";
 
 interface Props {
   doc?: EditorStateConfig["doc"];

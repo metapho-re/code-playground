@@ -1,9 +1,6 @@
-import { CodeMirror } from "./CodeMirror";
-import { useCodeMirrorState } from "./useCodeMirrorState";
+import { CodeMirror, useCodeMirrorState } from "./code-mirror";
+import { cssCodeSample, htmlCodeSample, jsCodeSample } from "./code-samples";
 import { getSrcDoc } from "./getSrcDoc";
-import { cssCodeSample } from "./cssCodeSample";
-import { htmlCodeSample } from "./htmlCodeSample";
-import { jsCodeSample } from "./jsCodeSample";
 import "./App.css";
 
 function App() {

@@ -31,7 +31,7 @@ import {
 } from "@codemirror/view";
 import { MutableRefObject, useEffect, useMemo, useRef, useState } from "react";
 import { kanagawa } from "./kanagawa";
-import { DocToJSON } from "./types";
+import { DocToJSON } from "../types";
 
 interface Props {
   doc?: EditorStateConfig["doc"];
