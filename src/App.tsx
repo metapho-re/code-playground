@@ -40,16 +40,19 @@ function App() {
         <CodeMirror
           doc={htmlCodeSample}
           languageExtension={htmlExtension}
+          name="html"
           onChange={onHtmlCodeChange}
         />
         <CodeMirror
           doc={cssCodeSample}
           languageExtension={cssExtension}
+          name="css"
           onChange={onCssCodeChange}
         />
         <CodeMirror
           doc={jsCodeSample}
           languageExtension={jsExtension}
+          name="js"
           onChange={onJsCodeChange}
         />
         <iframe srcDoc={srcDoc} />

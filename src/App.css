@@ -70,6 +70,33 @@ svg {
   overflow: scroll;
 }
 
+.panel > div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel > div:first-child > p {
+  width: 64px;
+  margin: 0;
+  padding: 2px;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  font-size: 0.8em;
+  color: #1f1f28;
+}
+
+#html {
+  background-color: #ff5d62;
+}
+
+#css {
+  background-color: #7e9cd8;
+}
+
+#js {
+  background-color: #e6c384;
+}
+
 .panel,
 iframe {
   width: 50%;

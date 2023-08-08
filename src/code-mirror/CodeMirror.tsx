@@ -5,11 +5,25 @@ import { DocToJSON } from "../types";
 interface Props {
   doc?: EditorStateConfig["doc"];
   languageExtension: Extension;
+  name: "html" | "css" | "js";
   onChange: (docToJSON: DocToJSON) => void;
 }
 
-export const CodeMirror = ({ doc, languageExtension, onChange }: Props) => {
+export const CodeMirror = ({
+  doc,
+  languageExtension,
+  name,
+  onChange,
+}: Props) => {
   const ref = useCodeMirror({ doc, languageExtension, onChange });
 
-  return <div className="panel" ref={ref} />;
+  return (
+    <div className="panel">
+      <div>
+        <div />
+        <p id={name}>{name.toUpperCase()}</p>
+      </div>
+      <div ref={ref} />
+    </div>
+  );
 };
