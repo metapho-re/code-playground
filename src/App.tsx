@@ -35,7 +35,7 @@ function App() {
 
   return (
     <>
-      <Header onLayoutChange={handleLayoutChange} />
+      <Header layout={layout} onLayoutChange={handleLayoutChange} />
       <div id="container" className={layout}>
         <CodeMirror
           doc={htmlCodeSample}

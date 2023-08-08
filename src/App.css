@@ -19,14 +19,26 @@ button {
   padding: 0;
   margin-inline-start: 8px;
   cursor: pointer;
-  border: 2px solid #c8c093;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c8c093;
   border-radius: 4px;
   background-color: #1f1f28;
+  transition: border-color 300ms;
+}
+
+button.selected {
+  border-color: #7e9cd8;
 }
 
 svg {
   stroke: #c8c093;
   stroke-width: 2px;
+  transition: stroke 300ms;
+}
+
+.selected > svg {
+  stroke: #7e9cd8;
 }
 
 #header {

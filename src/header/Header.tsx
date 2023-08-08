@@ -4,10 +4,14 @@ import { VerticalStackLayoutIcon } from "./VerticalStackLayoutIcon";
 import { Layout } from "../types";
 
 interface Props {
+  layout: Layout;
   onLayoutChange: (layout: Layout) => void;
 }
 
-export const Header = ({ onLayoutChange }: Props) => {
+export const Header = ({ layout, onLayoutChange }: Props) => {
+  const classNameFactory =
+    (referenceLayout: Layout) => (currentLayout: Layout) =>
+      referenceLayout === currentLayout ? "selected" : "";
   const handleLayoutChangeFactory = (layout: Layout) => () => {
     onLayoutChange(layout);
   };
@@ -16,13 +20,22 @@ export const Header = ({ onLayoutChange }: Props) => {
     <div id="header">
       <div>
         <p>Layout</p>
-        <button onClick={handleLayoutChangeFactory(Layout.Balanced)}>
+        <button
+          className={classNameFactory(Layout.Balanced)(layout)}
+          onClick={handleLayoutChangeFactory(Layout.Balanced)}
+        >
           <BalancedLayoutIcon />
         </button>
-        <button onClick={handleLayoutChangeFactory(Layout.HorizontalStack)}>
+        <button
+          className={classNameFactory(Layout.HorizontalStack)(layout)}
+          onClick={handleLayoutChangeFactory(Layout.HorizontalStack)}
+        >
           <HorizontalStackLayoutIcon />
         </button>
-        <button onClick={handleLayoutChangeFactory(Layout.VerticalStack)}>
+        <button
+          className={classNameFactory(Layout.VerticalStack)(layout)}
+          onClick={handleLayoutChangeFactory(Layout.VerticalStack)}
+        >
           <VerticalStackLayoutIcon />
         </button>
       </div>
