@@ -9,11 +9,49 @@ body {
   background-color: #1f1f28;
 }
 
+p {
+  color: #c8c093;
+}
+
+button {
+  width: 44px;
+  height: 28px;
+  padding: 0;
+  margin-inline-start: 8px;
+  cursor: pointer;
+  border: 2px solid #c8c093;
+  border-radius: 4px;
+  background-color: #1f1f28;
+}
+
+svg {
+  stroke: #c8c093;
+  stroke-width: 2px;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 16px;
+}
+
+#header > div {
+  display: flex;
+  align-items: center;
+}
+
 #container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
+  height: calc(100% - 50px);
+  overflow: hidden;
+}
+
+#container.horizontal-stack {
+  flex-direction: row;
 }
 
 .panel {
@@ -26,4 +64,24 @@ iframe {
   height: 50%;
   box-sizing: border-box;
   border: 1px solid #54546d;
+}
+
+.horizontal-stack .panel {
+  width: calc(100% / 3);
+  height: 50%;
+}
+
+.horizontal-stack iframe {
+  width: 100%;
+  height: 50%;
+}
+
+.vertical-stack .panel {
+  width: 50%;
+  height: calc(100% / 3);
+}
+
+.vertical-stack iframe {
+  width: 50%;
+  height: 100%;
 }

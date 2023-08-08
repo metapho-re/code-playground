@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { CodeMirror, useCodeMirrorState } from "./code-mirror";
 import { cssCodeSample, htmlCodeSample, jsCodeSample } from "./code-samples";
 import { getSrcDoc } from "./getSrcDoc";
+import { Header } from "./header";
+import { Layout } from "./types";
 import "./App.css";
 
 function App() {
+  const [layout, setLayout] = useState(Layout.Balanced);
+
   const {
     code: htmlCode,
     languageExtension: htmlExtension,
@@ -24,25 +29,32 @@ function App() {
 
   const srcDoc = getSrcDoc({ htmlCode, cssCode, jsCode });
 
+  const handleLayoutChange = (layout: Layout) => {
+    setLayout(layout);
+  };
+
   return (
-    <div id="container">
-      <CodeMirror
-        doc={htmlCodeSample}
-        languageExtension={htmlExtension}
-        onChange={onHtmlCodeChange}
-      />
-      <CodeMirror
-        doc={cssCodeSample}
-        languageExtension={cssExtension}
-        onChange={onCssCodeChange}
-      />
-      <CodeMirror
-        doc={jsCodeSample}
-        languageExtension={jsExtension}
-        onChange={onJsCodeChange}
-      />
-      <iframe srcDoc={srcDoc} />
-    </div>
+    <>
+      <Header onLayoutChange={handleLayoutChange} />
+      <div id="container" className={layout}>
+        <CodeMirror
+          doc={htmlCodeSample}
+          languageExtension={htmlExtension}
+          onChange={onHtmlCodeChange}
+        />
+        <CodeMirror
+          doc={cssCodeSample}
+          languageExtension={cssExtension}
+          onChange={onCssCodeChange}
+        />
+        <CodeMirror
+          doc={jsCodeSample}
+          languageExtension={jsExtension}
+          onChange={onJsCodeChange}
+        />
+        <iframe srcDoc={srcDoc} />
+      </div>
+    </>
   );
 }
 
