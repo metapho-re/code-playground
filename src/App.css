@@ -56,14 +56,14 @@ svg {
 
 #container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   height: calc(100% - 50px);
   overflow: hidden;
 }
 
-#container.horizontal-stack {
-  flex-direction: row;
+#container.vertical-stack {
+  flex-direction: column;
 }
 
 .panel {
