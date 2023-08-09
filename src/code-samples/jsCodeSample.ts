@@ -1,6 +1,6 @@
-export const jsCodeSample = `const ROW_COUNT = 150;
-const COLUMN_COUNT = 300;
-const THICKNESS = 6400;
+export const jsCodeSample = `const ROW_COUNT = 80;
+const COLUMN_COUNT = 200;
+const THICKNESS = 3200;
 const SPACING = 4;
 const MARGIN = 0;
 const DRAG = 0.85;
