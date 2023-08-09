@@ -7,3 +7,5 @@ export enum Layout {
   HorizontalStack = "horizontal-stack",
   VerticalStack = "vertical-stack",
 }
+
+export type PanelId = "html" | "css" | "js" | "frame";

@@ -1,7 +1,9 @@
-import { BalancedLayoutIcon } from "./BalancedLayoutIcon";
-import { HorizontalStackLayoutIcon } from "./HorizontalStackLayoutIcon";
-import { VerticalStackLayoutIcon } from "./VerticalStackLayoutIcon";
-import { Layout } from "../types";
+import {
+  BalancedLayoutIcon,
+  HorizontalStackLayoutIcon,
+  VerticalStackLayoutIcon,
+} from "./icons";
+import { Layout } from "./types";
 
 interface Props {
   layout: Layout;
@@ -12,6 +14,7 @@ export const Header = ({ layout, onLayoutChange }: Props) => {
   const classNameFactory =
     (referenceLayout: Layout) => (currentLayout: Layout) =>
       referenceLayout === currentLayout ? "selected" : "";
+
   const handleLayoutChangeFactory = (layout: Layout) => () => {
     onLayoutChange(layout);
   };

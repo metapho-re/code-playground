@@ -13,6 +13,12 @@ p {
   color: #c8c093;
 }
 
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 button {
   width: 44px;
   height: 28px;
@@ -32,9 +38,10 @@ button.selected {
 }
 
 svg {
+  fill: #c8c093;
   stroke: #c8c093;
   stroke-width: 2px;
-  transition: stroke 300ms;
+  transition: fill 300ms, stroke 300ms;
 }
 
 .selected > svg {
@@ -67,6 +74,15 @@ svg {
 }
 
 .panel {
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: 1px solid #54546d;
+}
+
+.panel > div:last-child,
+.panel > iframe {
+  height: calc(100% - 20px);
   overflow: scroll;
 }
 
@@ -85,6 +101,42 @@ svg {
   color: #1f1f28;
 }
 
+.panel > div:first-child > button {
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+
+.horizontal-stack .panel {
+  width: calc(100% / 3);
+  height: 50%;
+}
+
+.horizontal-stack .panel:last-child {
+  width: 100%;
+  height: 50%;
+}
+
+.vertical-stack .panel {
+  width: 50%;
+  height: calc(100% / 3);
+}
+
+.vertical-stack .panel:last-child {
+  width: 50%;
+  height: 100%;
+}
+
+.panel.full-screen,
+.panel:last-child.full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+.panel.hidden {
+  display: none;
+}
+
 #html {
   background-color: #ff5d62;
 }
@@ -97,30 +149,6 @@ svg {
   background-color: #e6c384;
 }
 
-.panel,
-iframe {
-  width: 50%;
-  height: 50%;
-  box-sizing: border-box;
-  border: 1px solid #54546d;
-}
-
-.horizontal-stack .panel {
-  width: calc(100% / 3);
-  height: 50%;
-}
-
-.horizontal-stack iframe {
-  width: 100%;
-  height: 50%;
-}
-
-.vertical-stack .panel {
-  width: 50%;
-  height: calc(100% / 3);
-}
-
-.vertical-stack iframe {
-  width: 50%;
-  height: 100%;
+#frame {
+  background-color: #98bb6c;
 }
