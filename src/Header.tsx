@@ -1,16 +1,24 @@
 import {
   BalancedLayoutIcon,
   HorizontalStackLayoutIcon,
+  ThemeIcon,
   VerticalStackLayoutIcon,
 } from "./icons";
-import { Layout } from "./types";
+import { Layout, Theme } from "./types";
 
 interface Props {
   layout: Layout;
+  theme: Theme;
   onLayoutChange: (layout: Layout) => void;
+  onThemeChange: () => void;
 }
 
-export const Header = ({ layout, onLayoutChange }: Props) => {
+export const Header = ({
+  layout,
+  theme,
+  onLayoutChange,
+  onThemeChange,
+}: Props) => {
   const classNameFactory =
     (referenceLayout: Layout) => (currentLayout: Layout) =>
       referenceLayout === currentLayout ? "selected" : "";
@@ -40,6 +48,12 @@ export const Header = ({ layout, onLayoutChange }: Props) => {
           onClick={handleLayoutChangeFactory(Layout.VerticalStack)}
         >
           <VerticalStackLayoutIcon />
+        </button>
+      </div>
+      <div>
+        <p>Theme</p>
+        <button onClick={onThemeChange}>
+          <ThemeIcon theme={theme} />
         </button>
       </div>
     </div>

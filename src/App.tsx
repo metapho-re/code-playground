@@ -4,11 +4,12 @@ import { cssCodeSample, htmlCodeSample, jsCodeSample } from "./code-samples";
 import { getSrcDoc } from "./getSrcDoc";
 import { Header } from "./Header";
 import { Panel } from "./Panel";
-import { Layout, PanelId } from "./types";
+import { Layout, PanelId, Theme } from "./types";
 import "./App.css";
 
 function App() {
   const [layout, setLayout] = useState(Layout.Balanced);
+  const [theme, setTheme] = useState(Theme.Dark);
   const [expandedPanelId, setExpandedPanelId] = useState<PanelId | null>(null);
 
   const {
@@ -39,9 +40,22 @@ function App() {
     setLayout(layout);
   };
 
+  const handleThemeChange = () => {
+    document.querySelector("#root")?.classList.toggle("light");
+
+    setTheme((previousState) =>
+      previousState === Theme.Dark ? Theme.Light : Theme.Dark
+    );
+  };
+
   return (
     <>
-      <Header layout={layout} onLayoutChange={handleLayoutChange} />
+      <Header
+        layout={layout}
+        theme={theme}
+        onLayoutChange={handleLayoutChange}
+        onThemeChange={handleThemeChange}
+      />
       <div id="container" className={layout}>
         <Panel
           expandedPanelId={expandedPanelId}
@@ -51,6 +65,7 @@ function App() {
           <CodeMirror
             doc={htmlCodeSample}
             languageExtension={htmlExtension}
+            theme={theme}
             onChange={onHtmlCodeChange}
           />
         </Panel>
@@ -62,6 +77,7 @@ function App() {
           <CodeMirror
             doc={cssCodeSample}
             languageExtension={cssExtension}
+            theme={theme}
             onChange={onCssCodeChange}
           />
         </Panel>
@@ -73,6 +89,7 @@ function App() {
           <CodeMirror
             doc={jsCodeSample}
             languageExtension={jsExtension}
+            theme={theme}
             onChange={onJsCodeChange}
           />
         </Panel>

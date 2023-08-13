@@ -9,3 +9,8 @@ export enum Layout {
 }
 
 export type PanelId = "html" | "css" | "js" | "frame";
+
+export enum Theme {
+  Dark = "dark",
+  Light = "light",
+}

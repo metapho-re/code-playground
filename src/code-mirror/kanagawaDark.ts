@@ -6,10 +6,12 @@ import { tags } from "@lezer/highlight";
 const fujiWhite = "#DCD7BA";
 const oldWhite = "#C8C093";
 const sumiInk0 = "#16161D";
-const sumiInk1 = "#1F1F28";
-const sumiInk2 = "#2A2A37";
-const sumiInk3 = "#363646";
-const sumiInk4 = "#54546D";
+const sumiInk1 = "#181820";
+const sumiInk2 = "#1A1A22";
+const sumiInk3 = "#1F1F28";
+const sumiInk4 = "#2A2A37";
+const sumiInk5 = "#363646";
+const sumiInk6 = "#54546D";
 const winterGreen = "#2B3328";
 const winterYellow = "#49443C";
 const winterRed = "#43242B";
@@ -23,13 +25,14 @@ const waveBlue1 = "#223249";
 const waveBlue2 = "#2D4F67";
 const waveAqua1 = "#6A9589";
 const waveAqua2 = "#7AA89F";
+const oniViolet1 = "#957FB8";
+const oniViolet2 = "#B8B4D0";
 const springViolet1 = "#938AA9";
 const springViolet2 = "#9CABCA";
 const boatYellow1 = "#938056";
 const boatYellow2 = "#C0A36E";
 const dragonBlue = "#658594";
 const fujiGray = "#727169";
-const oniViolet = "#957FB8";
 const crystalBlue = "#7E9CD8";
 const springBlue = "#7FB4CA";
 const lightBlue = "#A3D4D5";
@@ -49,6 +52,8 @@ export const colors = {
   sumiInk2,
   sumiInk3,
   sumiInk4,
+  sumiInk5,
+  sumiInk6,
   winterGreen,
   winterYellow,
   winterRed,
@@ -62,13 +67,14 @@ export const colors = {
   waveBlue2,
   waveAqua1,
   waveAqua2,
+  oniViolet1,
+  oniViolet2,
   springViolet1,
   springViolet2,
   boatYellow1,
   boatYellow2,
   dragonBlue,
   fujiGray,
-  oniViolet,
   crystalBlue,
   springBlue,
   lightBlue,
@@ -81,10 +87,10 @@ export const colors = {
   katanaGray,
 };
 
-export const kanagawaTheme = EditorView.theme(
+export const kanagawaDarkTheme = EditorView.theme(
   {
     "&": {
-      backgroundColor: sumiInk1,
+      backgroundColor: sumiInk3,
       color: fujiWhite,
     },
     ".cm-content": {
@@ -114,23 +120,24 @@ export const kanagawaTheme = EditorView.theme(
       backgroundColor: waveBlue2,
       outline: `1px solid ${roninYellow}`,
     },
-    ".cm-activeLine": { backgroundColor: sumiInk3 },
-    ".cm-selectionMatch": { backgroundColor: sumiInk3 },
+    ".cm-activeLine": { backgroundColor: sumiInk5 },
+    ".cm-selectionMatch": { backgroundColor: sumiInk5 },
     "&.cm-focused .cm-matchingBracket, &.cm-focused .cm-nonmatchingBracket": {
       backgroundColor: sumiInk0,
-      outline: `1px solid ${sumiInk4}`,
+      outline: `1px solid ${sumiInk6}`,
     },
     ".cm-gutters": {
-      backgroundColor: sumiInk1,
-      color: sumiInk4,
+      backgroundColor: sumiInk3,
+      color: sumiInk6,
       border: "none",
     },
     ".cm-activeLineGutter": {
       color: surimiOrange,
+      backgroundColor: sumiInk3,
     },
     ".cm-foldPlaceholder": {
-      backgroundColor: sumiInk2,
-      color: oniViolet,
+      backgroundColor: sumiInk4,
+      color: oniViolet1,
       border: "none",
     },
     ".cm-tooltip": {
@@ -147,7 +154,7 @@ export const kanagawaTheme = EditorView.theme(
     },
     ".cm-tooltip-autocomplete": {
       "& > ul > li[aria-selected]": {
-        backgroundColor: sumiInk3,
+        backgroundColor: sumiInk5,
         color: fujiWhite,
       },
     },
@@ -155,7 +162,7 @@ export const kanagawaTheme = EditorView.theme(
   { dark: true }
 );
 
-export const kanagawaHighlightStyle = HighlightStyle.define([
+export const kanagawaDarkHighlightStyle = HighlightStyle.define([
   { tag: tags.comment, color: fujiGray },
   { tag: tags.lineComment, color: fujiGray },
   { tag: tags.blockComment, color: fujiGray },
@@ -163,7 +170,7 @@ export const kanagawaHighlightStyle = HighlightStyle.define([
   { tag: tags.name, color: fujiWhite },
   { tag: tags.variableName, color: fujiWhite },
   { tag: tags.typeName, color: waveAqua2 },
-  { tag: tags.tagName, color: oniViolet },
+  { tag: tags.tagName, color: oniViolet1 },
   { tag: tags.propertyName, color: carpYellow },
   { tag: tags.attributeName, color: carpYellow },
   { tag: tags.className, color: waveAqua2 },
@@ -183,16 +190,16 @@ export const kanagawaHighlightStyle = HighlightStyle.define([
   { tag: tags.escape, color: springBlue },
   { tag: tags.color, color: surimiOrange },
   { tag: tags.url, color: springGreen, textDecoration: "underline" },
-  { tag: tags.keyword, color: oniViolet },
-  { tag: tags.self, color: oniViolet },
-  { tag: tags.null, color: oniViolet },
-  { tag: tags.atom, color: oniViolet },
+  { tag: tags.keyword, color: oniViolet1 },
+  { tag: tags.self, color: oniViolet1 },
+  { tag: tags.null, color: oniViolet1 },
+  { tag: tags.atom, color: oniViolet1 },
   { tag: tags.unit, color: carpYellow },
-  { tag: tags.modifier, color: oniViolet },
+  { tag: tags.modifier, color: oniViolet1 },
   { tag: tags.operatorKeyword, color: carpYellow },
-  { tag: tags.controlKeyword, color: oniViolet, fontWeight: "bold" },
-  { tag: tags.definitionKeyword, color: oniViolet },
-  { tag: tags.moduleKeyword, color: oniViolet },
+  { tag: tags.controlKeyword, color: oniViolet1, fontWeight: "bold" },
+  { tag: tags.definitionKeyword, color: oniViolet1 },
+  { tag: tags.moduleKeyword, color: oniViolet1 },
   { tag: tags.operator, color: carpYellow },
   { tag: tags.derefOperator, color: carpYellow },
   { tag: tags.arithmeticOperator, color: carpYellow },
@@ -229,10 +236,10 @@ export const kanagawaHighlightStyle = HighlightStyle.define([
   { tag: tags.deleted, color: autumnRed },
   { tag: tags.changed, color: autumnYellow },
   { tag: tags.invalid, color: samuraiRed },
-  { tag: tags.meta, color: oniViolet },
-  { tag: tags.documentMeta, color: oniViolet },
+  { tag: tags.meta, color: oniViolet1 },
+  { tag: tags.documentMeta, color: oniViolet1 },
   { tag: tags.annotation, color: springViolet2 },
-  { tag: tags.processingInstruction, color: oniViolet },
+  { tag: tags.processingInstruction, color: oniViolet1 },
   { tag: tags.definition(tags.name), color: carpYellow },
   { tag: tags.constant(tags.name), color: surimiOrange },
   { tag: tags.function(tags.variableName), color: crystalBlue },
@@ -242,7 +249,7 @@ export const kanagawaHighlightStyle = HighlightStyle.define([
   { tag: tags.special(tags.variableName), color: waveRed },
 ]);
 
-export const kanagawa: Extension = [
-  kanagawaTheme,
-  syntaxHighlighting(kanagawaHighlightStyle),
+export const kanagawaDark: Extension = [
+  kanagawaDarkTheme,
+  syntaxHighlighting(kanagawaDarkHighlightStyle),
 ];
