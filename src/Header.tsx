@@ -5,6 +5,7 @@ import {
   VerticalStackLayoutIcon,
 } from "./icons";
 import { Layout, Theme } from "./types";
+import "./Header.css";
 
 interface Props {
   layout: Layout;
