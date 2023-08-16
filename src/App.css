@@ -23,12 +23,6 @@ p {
   color: var(--foreground-color);
 }
 
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
 button {
   width: 44px;
   height: 28px;
@@ -39,6 +33,7 @@ button {
   border-style: solid;
   border-color: var(--foreground-color);
   border-radius: 4px;
+  color: var(--foreground-color);
   background-color: var(--background-color);
 }
 
