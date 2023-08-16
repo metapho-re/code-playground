@@ -1,0 +1,4 @@
+dialog {
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+}
