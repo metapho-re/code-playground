@@ -6,6 +6,7 @@ import {
   ThemeIcon,
   VerticalStackLayoutIcon,
 } from "./icons";
+import { getLayoutButtonClassName } from "./getLayoutButtonClassName";
 import { Layout, Theme } from "./types";
 import "./Header.css";
 
@@ -24,10 +25,6 @@ export const Header = ({
   onLayoutChange,
   onThemeChange,
 }: Props) => {
-  const classNameFactory =
-    (referenceLayout: Layout) => (currentLayout: Layout) =>
-      referenceLayout === currentLayout ? "selected" : "";
-
   const handleLayoutChangeFactory = (layout: Layout) => () => {
     onLayoutChange(layout);
   };
@@ -41,19 +38,28 @@ export const Header = ({
       <div>
         <p>Layout</p>
         <button
-          className={classNameFactory(Layout.Balanced)(layout)}
+          className={getLayoutButtonClassName({
+            layout,
+            referenceLayout: Layout.Balanced,
+          })}
           onClick={handleLayoutChangeFactory(Layout.Balanced)}
         >
           <BalancedLayoutIcon />
         </button>
         <button
-          className={classNameFactory(Layout.HorizontalStack)(layout)}
+          className={getLayoutButtonClassName({
+            layout,
+            referenceLayout: Layout.HorizontalStack,
+          })}
           onClick={handleLayoutChangeFactory(Layout.HorizontalStack)}
         >
           <HorizontalStackLayoutIcon />
         </button>
         <button
-          className={classNameFactory(Layout.VerticalStack)(layout)}
+          className={getLayoutButtonClassName({
+            layout,
+            referenceLayout: Layout.VerticalStack,
+          })}
           onClick={handleLayoutChangeFactory(Layout.VerticalStack)}
         >
           <VerticalStackLayoutIcon />
