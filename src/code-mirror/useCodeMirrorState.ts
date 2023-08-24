@@ -1,5 +1,6 @@
 import { Extension } from "@codemirror/state";
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { debounce } from "./debounce";
 import { languages } from "./languages";
 import { DocToJSON } from "../types";
 
@@ -20,9 +21,13 @@ export const useCodeMirrorState = ({
 
   const languageExtension = useMemo(() => languages[language](), [language]);
 
-  const onCodeChange = useCallback((docToJSON: DocToJSON) => {
-    setCode(docToJSON);
-  }, []);
+  const onCodeChange = useMemo(
+    () =>
+      debounce((docToJSON: DocToJSON) => {
+        setCode(docToJSON);
+      }),
+    []
+  );
 
   return { code, languageExtension, onCodeChange };
 };
