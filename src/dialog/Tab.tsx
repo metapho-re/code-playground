@@ -1,5 +1,5 @@
 import { ChangeEventHandler, KeyboardEventHandler } from "react";
-import { Resource } from "./types";
+import { Resource } from "../types";
 import "./Tab.css";
 
 interface Props {

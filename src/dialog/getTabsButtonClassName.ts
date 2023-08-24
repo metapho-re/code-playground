@@ -1,4 +1,4 @@
-import { ResourceType } from "./types";
+import { ResourceType } from "../types";
 
 interface Props {
   resourceType: ResourceType;

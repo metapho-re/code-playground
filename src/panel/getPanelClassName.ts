@@ -1,4 +1,4 @@
-import { PanelId } from "./types";
+import { PanelId } from "../types";
 
 interface Props {
   expandedPanelId: PanelId | null;

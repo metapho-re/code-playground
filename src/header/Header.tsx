@@ -5,9 +5,9 @@ import {
   HorizontalStackLayoutIcon,
   ThemeIcon,
   VerticalStackLayoutIcon,
-} from "./icons";
+} from "../icons";
 import { getLayoutButtonClassName } from "./getLayoutButtonClassName";
-import { Layout, Theme } from "./types";
+import { Layout, Theme } from "../types";
 import "./Header.css";
 
 interface Props {

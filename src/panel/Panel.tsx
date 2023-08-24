@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
+import { ResizeIcon } from "../icons";
 import { getPanelClassName } from "./getPanelClassName";
-import { ResizeIcon } from "./icons";
-import { PanelId } from "./types";
+import { PanelId } from "../types";
 import "./Panel.css";
 
 interface Props {

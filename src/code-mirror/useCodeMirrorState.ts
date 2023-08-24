@@ -1,15 +1,7 @@
-import { css } from "@codemirror/lang-css";
-import { html } from "@codemirror/lang-html";
-import { javascript } from "@codemirror/lang-javascript";
 import { Extension } from "@codemirror/state";
 import { useCallback, useMemo, useState } from "react";
+import { languages } from "./languages";
 import { DocToJSON } from "../types";
-
-const languages = {
-  html,
-  css,
-  javascript,
-};
 
 export const useCodeMirrorState = (
   language: keyof typeof languages,

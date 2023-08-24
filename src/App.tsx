@@ -1,15 +1,12 @@
 import { useRef, useState } from "react";
 import { CodeMirror, useCodeMirrorState } from "./code-mirror";
 import { cssCodeSample, htmlCodeSample, jsCodeSample } from "./code-samples";
-import { getSrcDoc } from "./getSrcDoc";
-import { Dialog } from "./Dialog";
-import { Header } from "./Header";
-import { Panel } from "./Panel";
+import { Dialog } from "./dialog";
+import { Header } from "./header";
+import { Panel } from "./panel";
+import { getSrcDoc, getUrlsFromResources } from "./utils";
 import { Layout, PanelId, Resource, ResourceType, Theme } from "./types";
 import "./App.css";
-
-const getUrlsFromResources = (resources: Resource[]) =>
-  resources.map(({ url }) => url);
 
 function App() {
   const dialogRef = useRef<HTMLDialogElement>(null);

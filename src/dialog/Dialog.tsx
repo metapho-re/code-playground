@@ -1,13 +1,9 @@
 import { ChangeEventHandler, RefObject, useState } from "react";
+import { details } from "./details";
 import { getTabsButtonClassName } from "./getTabsButtonClassName";
 import { Tab } from "./Tab";
-import { Resource, ResourceType } from "./types";
+import { Resource, ResourceType } from "../types";
 import "./Dialog.css";
-
-const details = {
-  css: "URLs added here will be inserted in order as <link> tags in the <head> of the document, before the CSS in the editor.",
-  js: "URLs added here will be inserted in order as <script> tags in the <head> of the document, before the code in the editor.",
-};
 
 interface Props {
   dialogRef: RefObject<HTMLDialogElement>;

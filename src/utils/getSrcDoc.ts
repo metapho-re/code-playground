@@ -1,10 +1,6 @@
-import { DocToJSON } from "./types";
-
-const getLinkTags = (urls: string[]) =>
-  urls.map((url) => `<link rel="stylesheet" href="${url}">`);
-
-const getScriptTags = (urls: string[]) =>
-  urls.map((url) => `<script src="${url}"></script>`);
+import { getLinkTags } from "./getLinkTags";
+import { getScriptTags } from "./getScriptTags";
+import { DocToJSON } from "../types";
 
 interface Props {
   htmlCode: DocToJSON;

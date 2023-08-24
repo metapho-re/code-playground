@@ -1,4 +1,4 @@
-import { Layout } from "./types";
+import { Layout } from "../types";
 
 interface Props {
   layout: Layout;
