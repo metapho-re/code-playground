@@ -22,19 +22,28 @@ function App() {
     code: htmlCode,
     languageExtension: htmlExtension,
     onCodeChange: onHtmlCodeChange,
-  } = useCodeMirrorState("html", htmlCodeSample.split("\n"));
+  } = useCodeMirrorState({
+    language: "html",
+    initialState: htmlCodeSample.split("\n"),
+  });
 
   const {
     code: cssCode,
     languageExtension: cssExtension,
     onCodeChange: onCssCodeChange,
-  } = useCodeMirrorState("css", cssCodeSample.split("\n"));
+  } = useCodeMirrorState({
+    language: "css",
+    initialState: cssCodeSample.split("\n"),
+  });
 
   const {
     code: jsCode,
     languageExtension: jsExtension,
     onCodeChange: onJsCodeChange,
-  } = useCodeMirrorState("javascript", jsCodeSample.split("\n"));
+  } = useCodeMirrorState({
+    language: "javascript",
+    initialState: jsCodeSample.split("\n"),
+  });
 
   const srcDoc = getSrcDoc({
     htmlCode,

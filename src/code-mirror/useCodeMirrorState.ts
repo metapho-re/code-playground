@@ -3,10 +3,15 @@ import { useCallback, useMemo, useState } from "react";
 import { languages } from "./languages";
 import { DocToJSON } from "../types";
 
-export const useCodeMirrorState = (
-  language: keyof typeof languages,
-  initialState: DocToJSON
-): {
+interface Props {
+  language: keyof typeof languages;
+  initialState: DocToJSON;
+}
+
+export const useCodeMirrorState = ({
+  language,
+  initialState,
+}: Props): {
   code: DocToJSON;
   languageExtension: Extension;
   onCodeChange: (docToJSON: DocToJSON) => void;
