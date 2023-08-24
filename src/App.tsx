@@ -5,14 +5,21 @@ import { getSrcDoc } from "./getSrcDoc";
 import { Dialog } from "./Dialog";
 import { Header } from "./Header";
 import { Panel } from "./Panel";
-import { Layout, PanelId, Theme } from "./types";
+import { Layout, PanelId, Resource, ResourceType, Theme } from "./types";
 import "./App.css";
+
+const getUrlsFromResources = (resources: Resource[]) =>
+  resources.map(({ url }) => url);
 
 function App() {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const [layout, setLayout] = useState(Layout.Balanced);
-  const [theme, setTheme] = useState(Theme.Dark);
   const [expandedPanelId, setExpandedPanelId] = useState<PanelId | null>(null);
+  const [layout, setLayout] = useState(Layout.Balanced);
+  const [resources, setResources] = useState<Record<ResourceType, Resource[]>>({
+    css: [],
+    js: [],
+  });
+  const [theme, setTheme] = useState(Theme.Dark);
 
   const {
     code: htmlCode,
@@ -32,7 +39,13 @@ function App() {
     onCodeChange: onJsCodeChange,
   } = useCodeMirrorState("javascript", jsCodeSample.split("\n"));
 
-  const srcDoc = getSrcDoc({ htmlCode, cssCode, jsCode });
+  const srcDoc = getSrcDoc({
+    htmlCode,
+    cssCode,
+    jsCode,
+    cssUrls: getUrlsFromResources(resources.css),
+    jsUrls: getUrlsFromResources(resources.js),
+  });
 
   const handleResizeFactory = (panelId: PanelId) => () => {
     setExpandedPanelId(panelId === expandedPanelId ? null : panelId);
@@ -40,6 +53,25 @@ function App() {
 
   const handleLayoutChange = (layout: Layout) => {
     setLayout(layout);
+  };
+
+  const handleResourceAddition = (resourceType: ResourceType, url: string) => {
+    setResources((previousState) => ({
+      ...previousState,
+      [resourceType]: [
+        ...previousState[resourceType],
+        { id: crypto.randomUUID(), url },
+      ],
+    }));
+  };
+
+  const handleResourceDeletion = (resourceType: ResourceType, id: string) => {
+    setResources((previousState) => ({
+      ...previousState,
+      [resourceType]: previousState[resourceType].filter(
+        (resource) => resource.id !== id
+      ),
+    }));
   };
 
   const handleThemeChange = () => {
@@ -104,7 +136,12 @@ function App() {
           <iframe srcDoc={srcDoc} />
         </Panel>
       </div>
-      <Dialog dialogRef={dialogRef} />
+      <Dialog
+        dialogRef={dialogRef}
+        resources={resources}
+        onResourceAddition={handleResourceAddition}
+        onResourceDeletion={handleResourceDeletion}
+      />
     </>
   );
 }

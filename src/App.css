@@ -4,8 +4,9 @@ body {
 
 #root {
   --background-color: #1f1f28;
-  --border-color: #54546d;
+  --lighter-background-color: #2a2a37;
   --foreground-color: #c8c093;
+  --border-color: #54546d;
 
   width: 100vw;
   height: 100vh;
@@ -15,8 +16,9 @@ body {
 
 #root.light {
   --background-color: #e5ddb0;
-  --border-color: #8a8980;
+  --lighter-background-color: #f2ecbc;
   --foreground-color: #43436c;
+  --border-color: #8a8980;
 }
 
 p {

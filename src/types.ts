@@ -10,6 +10,13 @@ export enum Layout {
 
 export type PanelId = "html" | "css" | "js" | "frame";
 
+export interface Resource {
+  id: string;
+  url: string;
+}
+
+export type ResourceType = "css" | "js";
+
 export enum Theme {
   Dark = "dark",
   Light = "light",

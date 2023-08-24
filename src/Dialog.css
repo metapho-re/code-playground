@@ -1,4 +1,28 @@
 dialog {
+  border-radius: 8px;
   color: var(--foreground-color);
   background-color: var(--background-color);
+}
+
+dialog > button:nth-child(1),
+dialog > button:nth-child(2) {
+  width: 50%;
+  margin-inline-start: 0;
+  border-block-end: none;
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+  border-color: transparent;
+}
+
+dialog > button.selected {
+  border-color: var(--foreground-color);
+}
+
+dialog > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+dialog > div:last-child button {
+  width: 64px;
 }
