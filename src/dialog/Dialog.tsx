@@ -68,6 +68,7 @@ export const Dialog = ({
           resourceType: "css",
           selectedResourceType,
         })}
+        title="Select CSS tab"
         onClick={handleResourceTypeSelectionFactory("css")}
       >
         CSS
@@ -77,6 +78,7 @@ export const Dialog = ({
           resourceType: "js",
           selectedResourceType,
         })}
+        title="Select JS tab"
         onClick={handleResourceTypeSelectionFactory("js")}
       >
         JS
@@ -90,7 +92,9 @@ export const Dialog = ({
         onResourceDeletion={handleResourceDeletion}
       />
       <div>
-        <button onClick={handleDialogClose}>Close</button>
+        <button title="Close dialog" onClick={handleDialogClose}>
+          Close
+        </button>
       </div>
     </dialog>
   );

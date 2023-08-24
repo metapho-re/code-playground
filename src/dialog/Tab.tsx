@@ -44,7 +44,9 @@ export const Tab = ({
           onChange={onInputChange}
           onKeyDown={handleResourceAddition}
         />
-        <button onClick={onResourceAddition}>Add</button>
+        <button title="Add dependency" onClick={onResourceAddition}>
+          Add
+        </button>
       </div>
       <div id="list">
         {resources.map(({ id, url }, index) => (
@@ -52,7 +54,12 @@ export const Tab = ({
             <p>
               {index + 1}. {url}
             </p>
-            <button onClick={handleResourceDeletionFactory(id)}>X</button>
+            <button
+              title="Delete dependency"
+              onClick={handleResourceDeletionFactory(id)}
+            >
+              X
+            </button>
           </div>
         ))}
       </div>

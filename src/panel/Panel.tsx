@@ -18,11 +18,14 @@ export const Panel = ({
 }: PropsWithChildren<Props>) => {
   const className = getPanelClassName({ expandedPanelId, referencePanelId });
   const isFullScreen = expandedPanelId === referencePanelId;
+  const title = isFullScreen
+    ? "Escape fullscreen mode"
+    : "Make panel fullscreen";
 
   return (
     <div className={className}>
       <div>
-        <button onClick={onResize}>
+        <button title={title} onClick={onResize}>
           <ResizeIcon isFullScreen={isFullScreen} />
         </button>
         <p id={referencePanelId}>{referencePanelId.toUpperCase()}</p>

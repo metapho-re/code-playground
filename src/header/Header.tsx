@@ -42,6 +42,7 @@ export const Header = ({
             layout,
             referenceLayout: Layout.Balanced,
           })}
+          title="Switch to balanced layout"
           onClick={handleLayoutChangeFactory(Layout.Balanced)}
         >
           <BalancedLayoutIcon />
@@ -51,6 +52,7 @@ export const Header = ({
             layout,
             referenceLayout: Layout.HorizontalStack,
           })}
+          title="Switch to horizontal stack layout"
           onClick={handleLayoutChangeFactory(Layout.HorizontalStack)}
         >
           <HorizontalStackLayoutIcon />
@@ -60,6 +62,7 @@ export const Header = ({
             layout,
             referenceLayout: Layout.VerticalStack,
           })}
+          title="Switch to vertical stack layout"
           onClick={handleLayoutChangeFactory(Layout.VerticalStack)}
         >
           <VerticalStackLayoutIcon />
@@ -67,13 +70,13 @@ export const Header = ({
       </div>
       <div>
         <p>Theme</p>
-        <button onClick={onThemeChange}>
+        <button title="Switch theme" onClick={onThemeChange}>
           <ThemeIcon theme={theme} />
         </button>
       </div>
       <div>
         <p>Dependencies</p>
-        <button onClick={handleDialogOpen}>
+        <button title="Add external dependencies" onClick={handleDialogOpen}>
           <DependenciesIcon />
         </button>
       </div>
