@@ -8,7 +8,7 @@ interface Props {
 export const getPanelClassName = ({
   expandedPanelId,
   referencePanelId,
-}: Props) => {
+}: Props): string => {
   if (referencePanelId === expandedPanelId) {
     return "panel full-screen";
   }

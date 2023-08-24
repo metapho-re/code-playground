@@ -5,5 +5,7 @@ interface Props {
   referenceLayout: Layout;
 }
 
-export const getLayoutButtonClassName = ({ layout, referenceLayout }: Props) =>
-  layout === referenceLayout ? "selected" : "";
+export const getLayoutButtonClassName = ({
+  layout,
+  referenceLayout,
+}: Props): string => (layout === referenceLayout ? "selected" : "");
