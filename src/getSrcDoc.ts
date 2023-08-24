@@ -29,13 +29,13 @@ export const getSrcDoc = ({
     ${getLinkTags(cssUrls).join("\n")}
     ${getScriptTags(jsUrls).join("\n")}
     <style>
-      ${cssCode.join("")}
+      ${cssCode.join("\n")}
     </style>
   </head>
   <body>
-    ${htmlCode.join("")}
+    ${htmlCode.join("\n")}
     <script>
-      ${jsCode.join("")}
+      ${jsCode.join("\n")}
     </script>
   </body>
 </html>`;
