@@ -128,7 +128,7 @@ export const kanagawaLightTheme = EditorView.theme(
     },
     ".cm-gutters": {
       backgroundColor: lotusWhite2,
-      color: lotusWhite5,
+      color: lotusViolet1,
       border: "none",
     },
     ".cm-activeLineGutter": {
