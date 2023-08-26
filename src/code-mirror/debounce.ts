@@ -1,8 +1,10 @@
 import { DocToJSON } from "../types";
 
+type FunctionToDebounce = (docToJSON: DocToJSON) => void;
+
 export const debounce = (
-  functionToDebounce: (docToJSON: DocToJSON) => void
-) => {
+  functionToDebounce: FunctionToDebounce
+): FunctionToDebounce => {
   let timer: number;
 
   return (docToJSON: DocToJSON) => {
