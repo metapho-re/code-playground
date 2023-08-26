@@ -1,4 +1,5 @@
 import { ChangeEventHandler, KeyboardEventHandler } from "react";
+import { List } from "./List";
 import { Resource } from "../types";
 import "./Tab.css";
 
@@ -19,10 +20,6 @@ export const Tab = ({
   onResourceAddition,
   onResourceDeletion,
 }: Props) => {
-  const handleResourceDeletionFactory = (id: string) => () => {
-    onResourceDeletion(id);
-  };
-
   const handleResourceAddition: KeyboardEventHandler<HTMLInputElement> = (
     event
   ) => {
@@ -32,37 +29,28 @@ export const Tab = ({
   };
 
   return (
-    <div id="tab">
-      <div>
-        <p>{details}</p>
+    <div className="tab-body">
+      <div className="tab-description">
+        <p className="tab-description__text">{details}</p>
       </div>
-      <div>
+      <div className="tab-form">
         <input
+          className="tab-form__input"
           type="url"
           placeholder="Type in a valid URL..."
           value={inputValue}
           onChange={onInputChange}
           onKeyDown={handleResourceAddition}
         />
-        <button title="Add dependency" onClick={onResourceAddition}>
+        <button
+          className="tab-form__button"
+          title="Add dependency"
+          onClick={onResourceAddition}
+        >
           Add
         </button>
       </div>
-      <div id="list">
-        {resources.map(({ id, url }, index) => (
-          <div key={id} className="list-item">
-            <p>
-              {index + 1}. {url}
-            </p>
-            <button
-              title="Delete dependency"
-              onClick={handleResourceDeletionFactory(id)}
-            >
-              X
-            </button>
-          </div>
-        ))}
-      </div>
+      <List resources={resources} onResourceDeletion={onResourceDeletion} />
     </div>
   );
 };

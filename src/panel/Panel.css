@@ -5,81 +5,79 @@
   border: 1px solid var(--border-color);
 }
 
-.panel > div:last-child,
-.panel > iframe {
-  height: calc(100% - 20px);
-  overflow: scroll;
-}
-
-.panel > div:first-child {
-  display: flex;
-  justify-content: space-between;
-}
-
-.panel > div:first-child > p {
-  width: 64px;
-  margin: 0;
-  padding: 2px;
-  text-align: center;
-  border-bottom-left-radius: 8px;
-  font-size: 0.8em;
-  color: #1f1f28;
-}
-
-.panel > div:first-child > button {
-  width: 20px;
-  height: 20px;
-  border: none;
-}
-
-.horizontal-stack .panel {
+.body_horizontal-stack .panel {
   width: calc(100% / 3);
   height: 50%;
 }
 
-.horizontal-stack .panel:last-child {
+.body_horizontal-stack .panel:last-child {
   width: 100%;
   height: 50%;
 }
 
-.vertical-stack .panel {
+.body_vertical-stack .panel {
   width: 50%;
   height: calc(100% / 3);
 }
 
-.vertical-stack .panel:last-child {
+.body_vertical-stack .panel:last-child {
   width: 50%;
   height: 100%;
 }
 
-.panel.full-screen,
-.panel:last-child.full-screen {
+.panel.panel_full-screen,
+.panel.panel_full-screen:last-child {
   width: 100%;
   height: 100%;
 }
 
-.panel.hidden {
+.panel.panel_hidden {
   display: none;
 }
 
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+.panel-header {
+  display: flex;
+  justify-content: space-between;
 }
 
-#html {
+.panel-header__button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+
+.panel-header__text {
+  width: 64px;
+  margin: 0;
+  padding: 2px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #1f1f28;
+}
+
+.panel-header__text_html {
   background-color: #ff5d62;
 }
 
-#css {
+.panel-header__text_css {
   background-color: #7e9cd8;
 }
 
-#js {
+.panel-header__text_js {
   background-color: #e6c384;
 }
 
-#frame {
+.panel-header__text_frame {
   background-color: #98bb6c;
+}
+
+.panel-content {
+  width: 100%;
+  height: calc(100% - 20px);
+  overflow: scroll;
+  border: none;
 }

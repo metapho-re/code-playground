@@ -34,9 +34,9 @@ export const Header = ({
   };
 
   return (
-    <div id="header">
-      <div>
-        <p>Layout</p>
+    <div className="header">
+      <div className="header-item">
+        <p className="header-item__text">Layout</p>
         <button
           className={getLayoutButtonClassName({
             layout,
@@ -68,15 +68,23 @@ export const Header = ({
           <VerticalStackLayoutIcon />
         </button>
       </div>
-      <div>
-        <p>Theme</p>
-        <button title="Switch theme" onClick={onThemeChange}>
+      <div className="header-item">
+        <p className="header-item__text">Theme</p>
+        <button
+          className="header-item__button"
+          title="Switch theme"
+          onClick={onThemeChange}
+        >
           <ThemeIcon theme={theme} />
         </button>
       </div>
-      <div>
-        <p>Dependencies</p>
-        <button title="Add external dependencies" onClick={handleDialogOpen}>
+      <div className="header-item">
+        <p className="header-item__text">Dependencies</p>
+        <button
+          className="header-item__button"
+          title="Add external dependencies"
+          onClick={handleDialogOpen}
+        >
           <DependenciesIcon />
         </button>
       </div>

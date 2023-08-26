@@ -1,4 +1,4 @@
-#header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,7 +6,31 @@
   padding: 0 16px;
 }
 
-#header > div {
+.header-item {
   display: flex;
   align-items: center;
+}
+
+.header-item__text {
+  color: var(--foreground-color);
+}
+
+.header-item__button {
+  width: 44px;
+  height: 28px;
+  margin-inline-start: 8px;
+  padding: 0;
+  border: 2px solid var(--foreground-color);
+  border-radius: 4px;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+
+.header-item__button_selected {
+  border-color: #7e9cd8;
+}
+
+.header-item__button_selected svg {
+  stroke: #7e9cd8;
 }

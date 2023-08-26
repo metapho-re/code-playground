@@ -1,7 +1,5 @@
 import { ChangeEventHandler, RefObject, useState } from "react";
-import { details } from "./details";
-import { getTabsButtonClassName } from "./getTabsButtonClassName";
-import { Tab } from "./Tab";
+import { Tabs } from "./Tabs";
 import { Resource, ResourceType } from "../types";
 import "./Dialog.css";
 
@@ -25,19 +23,16 @@ export const Dialog = ({
     js: "",
   });
 
-  const handleResourceTypeSelectionFactory =
-    (resourceType: ResourceType) => () => {
-      setSelectedResourceType(resourceType);
-    };
+  const handleResourceTypeSelection = (resourceType: ResourceType) => {
+    setSelectedResourceType(resourceType);
+  };
 
-  const handleInputChangeFactory =
-    (resourceType: ResourceType): ChangeEventHandler<HTMLInputElement> =>
-    (event) => {
-      setInputValues((previousState) => ({
-        ...previousState,
-        [resourceType]: event.target.value,
-      }));
-    };
+  const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+    setInputValues((previousState) => ({
+      ...previousState,
+      [selectedResourceType]: event.target.value,
+    }));
+  };
 
   const handleResourceAddition = () => {
     if (inputValues[selectedResourceType].length > 0) {
@@ -62,37 +57,25 @@ export const Dialog = ({
   };
 
   return (
-    <dialog ref={dialogRef}>
-      <button
-        className={getTabsButtonClassName({
-          resourceType: "css",
-          selectedResourceType,
-        })}
-        title="Select CSS tab"
-        onClick={handleResourceTypeSelectionFactory("css")}
-      >
-        CSS
-      </button>
-      <button
-        className={getTabsButtonClassName({
-          resourceType: "js",
-          selectedResourceType,
-        })}
-        title="Select JS tab"
-        onClick={handleResourceTypeSelectionFactory("js")}
-      >
-        JS
-      </button>
-      <Tab
-        details={details[selectedResourceType]}
+    <dialog className="dialog" ref={dialogRef}>
+      <div className="dialog-header">
+        <h1 className="dialog-header__title">External CSS or JS management</h1>
+      </div>
+      <Tabs
         inputValue={inputValues[selectedResourceType]}
         resources={resources[selectedResourceType]}
-        onInputChange={handleInputChangeFactory(selectedResourceType)}
+        selectedResourceType={selectedResourceType}
+        onInputChange={handleInputChange}
         onResourceAddition={handleResourceAddition}
         onResourceDeletion={handleResourceDeletion}
+        onResourceTypeSelection={handleResourceTypeSelection}
       />
-      <div>
-        <button title="Close dialog" onClick={handleDialogClose}>
+      <div className="dialog-footer">
+        <button
+          className="dialog-footer__button"
+          title="Close dialog"
+          onClick={handleDialogClose}
+        >
           Close
         </button>
       </div>

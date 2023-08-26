@@ -1,28 +1,31 @@
-dialog {
+.dialog {
   border-radius: 8px;
   color: var(--foreground-color);
   background-color: var(--background-color);
 }
 
-dialog > button:nth-child(1),
-dialog > button:nth-child(2) {
-  width: 50%;
-  margin-inline-start: 0;
-  border-block-end: none;
-  border-end-start-radius: 0;
-  border-end-end-radius: 0;
-  border-color: transparent;
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block-end: 16px;
 }
 
-dialog > button.selected {
-  border-color: var(--foreground-color);
+.dialog-header__title {
+  font-size: 1.2em;
 }
 
-dialog > div:last-child {
+.dialog-footer {
   display: flex;
   justify-content: flex-end;
 }
 
-dialog > div:last-child button {
+.dialog-footer__button {
   width: 64px;
+  height: 28px;
+  border: 2px solid var(--foreground-color);
+  border-radius: 4px;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  cursor: pointer;
 }

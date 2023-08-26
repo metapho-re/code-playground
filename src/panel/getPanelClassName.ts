@@ -10,11 +10,11 @@ export const getPanelClassName = ({
   referencePanelId,
 }: Props): string => {
   if (referencePanelId === expandedPanelId) {
-    return "panel full-screen";
+    return "panel panel_full-screen";
   }
 
   if (expandedPanelId && referencePanelId !== expandedPanelId) {
-    return "panel hidden";
+    return "panel panel_hidden";
   }
 
   return "panel";

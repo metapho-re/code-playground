@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
-import { CodeMirror, useCodeMirrorState } from "./code-mirror";
-import { cssCodeSample, htmlCodeSample, jsCodeSample } from "./code-samples";
-import { Dialog } from "./dialog";
 import { Header } from "./header";
-import { Panel } from "./panel";
+import { Body } from "./body";
+import { Dialog } from "./dialog";
+import { useCodeMirrorState } from "./code-mirror";
 import { getSrcDoc, getUrlsFromResources } from "./utils";
+import { cssCodeSample, htmlCodeSample, jsCodeSample } from "./code-samples";
 import { Layout, PanelId, Resource, ResourceType, Theme } from "./types";
 import "./App.css";
 
@@ -53,7 +53,7 @@ function App() {
     jsUrls: getUrlsFromResources(resources.js),
   });
 
-  const handleResizeFactory = (panelId: PanelId) => () => {
+  const handleResize = (panelId: PanelId) => {
     setExpandedPanelId(panelId === expandedPanelId ? null : panelId);
   };
 
@@ -97,51 +97,19 @@ function App() {
         onLayoutChange={handleLayoutChange}
         onThemeChange={handleThemeChange}
       />
-      <div id="container" className={layout}>
-        <Panel
-          expandedPanelId={expandedPanelId}
-          referencePanelId="html"
-          onResize={handleResizeFactory("html")}
-        >
-          <CodeMirror
-            doc={htmlCodeSample}
-            languageExtension={htmlExtension}
-            theme={theme}
-            onChange={onHtmlCodeChange}
-          />
-        </Panel>
-        <Panel
-          expandedPanelId={expandedPanelId}
-          referencePanelId="css"
-          onResize={handleResizeFactory("css")}
-        >
-          <CodeMirror
-            doc={cssCodeSample}
-            languageExtension={cssExtension}
-            theme={theme}
-            onChange={onCssCodeChange}
-          />
-        </Panel>
-        <Panel
-          expandedPanelId={expandedPanelId}
-          referencePanelId="js"
-          onResize={handleResizeFactory("js")}
-        >
-          <CodeMirror
-            doc={jsCodeSample}
-            languageExtension={jsExtension}
-            theme={theme}
-            onChange={onJsCodeChange}
-          />
-        </Panel>
-        <Panel
-          expandedPanelId={expandedPanelId}
-          referencePanelId="frame"
-          onResize={handleResizeFactory("frame")}
-        >
-          <iframe srcDoc={srcDoc} />
-        </Panel>
-      </div>
+      <Body
+        cssExtension={cssExtension}
+        htmlExtension={htmlExtension}
+        jsExtension={jsExtension}
+        expandedPanelId={expandedPanelId}
+        layout={layout}
+        srcDoc={srcDoc}
+        theme={theme}
+        onCssCodeChange={onCssCodeChange}
+        onHtmlCodeChange={onHtmlCodeChange}
+        onJsCodeChange={onJsCodeChange}
+        onResize={handleResize}
+      />
       <Dialog
         dialogRef={dialogRef}
         resources={resources}

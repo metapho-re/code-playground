@@ -17,5 +17,5 @@ export const CodeMirror = ({
 }: Props) => {
   const ref = useCodeMirror({ doc, languageExtension, theme, onChange });
 
-  return <div ref={ref} />;
+  return <div className="panel-content" ref={ref} />;
 };

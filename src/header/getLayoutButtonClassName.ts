@@ -8,4 +8,7 @@ interface Props {
 export const getLayoutButtonClassName = ({
   layout,
   referenceLayout,
-}: Props): string => (layout === referenceLayout ? "selected" : "");
+}: Props): string =>
+  `header-item__button${
+    layout === referenceLayout ? " header-item__button_selected" : ""
+  }`;

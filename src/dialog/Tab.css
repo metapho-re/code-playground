@@ -1,24 +1,24 @@
-#tab {
+.tab-body {
   width: 35vw;
   height: 50vh;
 }
 
-#tab > div:nth-child(1) {
+.tab-description {
   display: flex;
   align-items: center;
   height: 128px;
 }
 
-#tab > div > p {
+.tab-description__text > {
   text-align: justify;
 }
 
-#tab > div:nth-child(2) {
+.tab-form {
   display: flex;
   align-items: center;
 }
 
-#tab > div > input {
+.tab-form__input {
   width: 100%;
   height: 26px;
   margin: 16px 0;
@@ -29,41 +29,17 @@
   background-color: var(--foreground-color);
 }
 
-#tab > div > input:focus {
+.tab-form__input:focus {
   outline: 1px solid #7e9cd8;
 }
 
-#tab > div:nth-child(3) {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  height: calc(100% - 220px);
-  overflow: auto;
-  padding: 8px;
-  border: 1px solid var(--foreground-color);
-  border-radius: 8px;
-  background-color: var(--lighter-background-color);
-}
-
-.list-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  border-radius: 8px;
+.tab-form__button {
+  width: 44px;
+  height: 28px;
+  margin-inline-start: 8px;
+  border: 2px solid var(--foreground-color);
+  border-radius: 4px;
+  color: var(--foreground-color);
   background-color: var(--background-color);
-}
-
-.list-item > p {
-  max-width: calc(100% - 68px);
-  margin: 4px 0;
-  padding-inline-start: 16px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.list-item > button {
-  border: none;
+  cursor: pointer;
 }

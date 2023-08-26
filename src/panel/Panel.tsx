@@ -24,11 +24,19 @@ export const Panel = ({
 
   return (
     <div className={className}>
-      <div>
-        <button title={title} onClick={onResize}>
+      <div className="panel-header">
+        <button
+          className="panel-header__button"
+          title={title}
+          onClick={onResize}
+        >
           <ResizeIcon isFullScreen={isFullScreen} />
         </button>
-        <p id={referencePanelId}>{referencePanelId.toUpperCase()}</p>
+        <p
+          className={`panel-header__text panel-header__text_${referencePanelId}`}
+        >
+          {referencePanelId.toUpperCase()}
+        </p>
       </div>
       {children}
     </div>

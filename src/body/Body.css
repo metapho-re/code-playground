@@ -1,0 +1,11 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: calc(100% - 50px);
+  overflow: hidden;
+}
+
+.body_vertical-stack {
+  flex-direction: column;
+}

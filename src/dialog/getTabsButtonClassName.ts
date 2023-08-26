@@ -8,4 +8,7 @@ interface Props {
 export const getTabsButtonClassName = ({
   resourceType,
   selectedResourceType,
-}: Props): string => (resourceType === selectedResourceType ? "selected" : "");
+}: Props): string =>
+  `tabs__button${
+    resourceType === selectedResourceType ? " tabs__button_selected" : ""
+  }`;

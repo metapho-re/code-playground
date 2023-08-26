@@ -1,7 +1,3 @@
-body {
-  margin: 0;
-}
-
 #root {
   --background-color: #1f1f28;
   --lighter-background-color: #2a2a37;
@@ -10,7 +6,6 @@ body {
 
   width: 100vw;
   height: 100vh;
-  margin: 0;
   background-color: var(--background-color);
 }
 
@@ -21,46 +16,12 @@ body {
   --border-color: #8a8980;
 }
 
-p {
-  color: var(--foreground-color);
-}
-
-button {
-  width: 44px;
-  height: 28px;
-  padding: 0;
-  margin-inline-start: 8px;
-  cursor: pointer;
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--foreground-color);
-  border-radius: 4px;
-  color: var(--foreground-color);
-  background-color: var(--background-color);
-}
-
-button.selected {
-  border-color: #7e9cd8;
+body {
+  margin: 0;
 }
 
 svg {
   fill: var(--foreground-color);
   stroke: var(--foreground-color);
   stroke-width: 2px;
-}
-
-.selected > svg {
-  stroke: #7e9cd8;
-}
-
-#container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: calc(100% - 50px);
-  overflow: hidden;
-}
-
-#container.vertical-stack {
-  flex-direction: column;
 }
