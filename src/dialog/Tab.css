@@ -9,7 +9,7 @@
   height: 128px;
 }
 
-.tab-description__text > {
+.tab-description__text {
   text-align: justify;
 }
 
