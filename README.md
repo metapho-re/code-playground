@@ -3,6 +3,10 @@
 A code playground for the web.
 Provide HTML, CSS and JavaScript, and watch the result live in the browser.
 
+![Code Playground 01](./assets/01.png)
+
+![Code Playground 02](./assets/02.png)
+
 ## Installation
 
 npm install
