@@ -7,6 +7,8 @@ Provide HTML, CSS and JavaScript, and watch the result live in the browser.
 
 ![Code Playground 02](./assets/02.png)
 
+![Code Playground 03](./assets/03.png)
+
 ## Installation
 
 npm install
