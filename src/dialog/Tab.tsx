@@ -30,9 +30,7 @@ export const Tab = ({
 
   return (
     <div className="tab-body">
-      <div className="tab-description">
-        <p className="tab-description__text">{details}</p>
-      </div>
+      <p className="tab-description">{details}</p>
       <div className="tab-form">
         <input
           className="tab-form__input"

@@ -1,15 +1,12 @@
 .tab-body {
+  display: flex;
+  flex-direction: column;
   width: 35vw;
   height: 50vh;
 }
 
 .tab-description {
-  display: flex;
-  align-items: center;
-  height: 128px;
-}
-
-.tab-description__text {
+  margin-block-end: 0;
   text-align: justify;
 }
 
