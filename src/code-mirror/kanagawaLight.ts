@@ -95,6 +95,8 @@ export const kanagawaLightTheme = EditorView.theme(
     },
     ".cm-content": {
       caretColor: lotusInk1,
+      fontFamily: "'Fira Code', monospace",
+      fontSize: "14px",
     },
     ".cm-cursor, .cm-dropCursor": {
       borderLeftColor: lotusInk1,

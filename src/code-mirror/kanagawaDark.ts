@@ -95,6 +95,8 @@ export const kanagawaDarkTheme = EditorView.theme(
     },
     ".cm-content": {
       caretColor: fujiWhite,
+      fontFamily: "'Fira Code', monospace",
+      fontSize: "14px",
     },
     ".cm-cursor, .cm-dropCursor": {
       borderLeftColor: fujiWhite,
