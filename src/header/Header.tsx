@@ -11,7 +11,7 @@ import { Layout, Theme } from "../types";
 import "./Header.css";
 
 interface Props {
-  dialogRef: RefObject<HTMLDialogElement>;
+  dialogRef: RefObject<HTMLDialogElement | null>;
   layout: Layout;
   theme: Theme;
   onLayoutChange: (layout: Layout) => void;

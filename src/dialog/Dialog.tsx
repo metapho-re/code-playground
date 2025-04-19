@@ -4,7 +4,7 @@ import { Resource, ResourceType } from "../types";
 import "./Dialog.css";
 
 interface Props {
-  dialogRef: RefObject<HTMLDialogElement>;
+  dialogRef: RefObject<HTMLDialogElement | null>;
   resources: Record<ResourceType, Resource[]>;
   onResourceAddition: (resourceType: ResourceType, url: string) => void;
   onResourceDeletion: (resourceType: ResourceType, id: string) => void;
